@@ -1,11 +1,25 @@
-size_t ft_strlen(const char *s)
-{
-    unsigned long i;
-    i = 0;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nfascia <nathanfascia@gmail.com>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/24 10:58:50 by nfascia           #+#    #+#             */
+/*   Updated: 2021/11/24 10:59:14 by nfascia          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-    while (s[i] != '\0')
-    {
-        i++;
-    }
-    return (i);
+#include "libft.h"
+
+size_t	ft_strlen(const char *s)
+{
+	unsigned long	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }
