@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nfascia <nathanfascia@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 11:16:16 by nfascia           #+#    #+#             */
-/*   Updated: 2021/11/24 15:35:39 by nfascia          ###   ########.fr       */
+/*   Created: 2021/11/23 19:24:18 by nfascia           #+#    #+#             */
+/*   Updated: 2021/11/24 15:33:59 by nfascia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	int	i;
+	unsigned long	i;
+	char			*a;
 
+	a = s;
 	i = 0;
-	while (s[i] != '\0')
+	c = (unsigned char) c;
+	while (i < n)
 	{
-		if (s[i] == c)
-		{
-			return ((char *)s + i);
-		}
+		a[i] = c;
 		i++;
 	}
-	return (NULL);
+	return (s);
 }

@@ -6,7 +6,7 @@
 /*   By: nfascia <nathanfascia@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:42:41 by nfascia           #+#    #+#             */
-/*   Updated: 2021/11/24 10:42:15 by nfascia          ###   ########.fr       */
+/*   Updated: 2021/11/24 15:35:06 by nfascia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int	i;
-	int	j;
+	unsigned long	i;
+	unsigned long	j;
 
 	i = 0;
 	j = 0;

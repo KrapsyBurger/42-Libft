@@ -6,7 +6,7 @@
 /*   By: nfascia <nathanfascia@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 10:47:47 by nfascia           #+#    #+#             */
-/*   Updated: 2021/11/24 10:38:34 by nfascia          ###   ########.fr       */
+/*   Updated: 2021/11/24 15:34:50 by nfascia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	i;
+	unsigned long	i;
 
 	i = 0;
 	while (i < n && s1[i] != '\0' && s2[i] != '\0')

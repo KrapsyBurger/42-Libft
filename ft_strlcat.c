@@ -6,7 +6,7 @@
 /*   By: nfascia <nathanfascia@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 11:22:32 by nfascia           #+#    #+#             */
-/*   Updated: 2021/11/24 11:22:45 by nfascia          ###   ########.fr       */
+/*   Updated: 2021/11/24 15:34:29 by nfascia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	unsigned int	dlen;
-	unsigned int	i;
-	unsigned int	i2;
+	unsigned long	dlen;
+	unsigned long	i;
+	unsigned long	i2;
 
 	i = 0;
 	dlen = ft_strlen(dest);
