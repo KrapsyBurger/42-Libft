@@ -1,23 +1,29 @@
-#include <string.h>
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nfascia <nathanfascia@gmail.com>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/23 11:16:16 by nfascia           #+#    #+#             */
+/*   Updated: 2021/11/24 10:38:33 by nfascia          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char *ft_strchr(const char *str, int c)
-{
-    int i = 0;
-    while (str[i] != '\0')
-    {
-        if (str[i] == c)
-        {
-            return (&str[i]);
-        }
-        i++;
-    }
-    return (0);
-}
+#include "libft.h"
 
-int main()
+char	*ft_strchr(const char *s, int c)
 {
-    char a[]="abcdefg";
-    printf("%s\n", ft_strchr(a, 'e'));
-    return (0);
+	int	i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] == c)
+		{
+			return ((char *)s + i);
+		}
+		i++;
+	}
+	return (NULL);
 }

@@ -1,22 +1,24 @@
-unsigned int	ft_strlen(char *str)
-{
-	unsigned int	i;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nfascia <nathanfascia@gmail.com>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/24 11:33:05 by nfascia           #+#    #+#             */
+/*   Updated: 2021/11/24 11:33:23 by nfascia          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
+#include "libft.h"
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	unsigned int	i;
 	unsigned int	src_size;
 
 	i = 0;
-	src_size = ft_strlen(src);
+	src_size = ft_strlen((char *)src);
 	if (size == 0)
 	{
 		return (src_size);

@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy(a modif).c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nfascia <nathanfascia@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/24 11:01:51 by nfascia           #+#    #+#             */
-/*   Updated: 2021/11/24 11:02:02 by nfascia          ###   ########.fr       */
+/*   Created: 2021/11/24 11:37:20 by nfascia           #+#    #+#             */
+/*   Updated: 2021/11/24 11:53:02 by nfascia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	if (c >= 'a' && c <= 'z')
+	const char	*a;
+	char		*b;
+	int			i;
+	int			j;
+
+	a = src;
+	b = dest;
+	i = ft_strlen(b);
+	j = 0;
+	while (j < n)
 	{
-		c -= 32;
+		b[i] = a[j];
+		j++;
+		i++;
 	}
-	return (c);
+	return (dest);
 }
