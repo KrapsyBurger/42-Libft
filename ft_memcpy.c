@@ -6,7 +6,7 @@
 /*   By: nfascia <nathanfascia@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 11:37:20 by nfascia           #+#    #+#             */
-/*   Updated: 2021/11/24 16:17:30 by nfascia          ###   ########.fr       */
+/*   Updated: 2021/11/25 19:38:07 by nfascia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	a = src;
 	b = dest;
+	i = 0;
+	if (!dest && !src)
+	{
+		return (NULL);
+	}
 	while (i < n)
 	{
 		b[i] = a[i];

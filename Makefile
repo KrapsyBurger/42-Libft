@@ -8,7 +8,6 @@ ft_isprint.c\
 ft_memchr.c\
 ft_memcmp.c\
 ft_memcpy.c\
-ft_memmove.c\
 ft_memset.c\
 ft_strchr.c\
 ft_strlcat.c\
@@ -20,29 +19,31 @@ ft_strrchr.c\
 ft_tolower.c\
 ft_toupper.c
 
-HEADER = ./includes/libft.h
+ OBJS        = ${SRCS:.c=.o}
 
-OBJS = ${SRC:.c=.o}
+HEADER        = .
 
-CC = gcc
+CC        = gcc
 
-CFLAGS = -Wall -Wextra -Werror -Iincludes
+CFLAGS        = -Werror -Wall -Wextra -Wconversion
 
-NAME = libft.a
+RM        = rm -f
 
-$(NAME): $(OBJS)
-			ar rc $(NAME) $(OBJS)
-			ranlib $(NAME)
+NAME        = libft.a
 
-%.o: %.c
-			$(CC) -I -o $@ -c $? $(CFLAGS)
+.c.o:
+	${CC} ${CFLAGS} -I${HEADER} -c $< -o ${<:.c=.o}
 
-all: $(NAME)
+
+${NAME}:	${OBJS}
+	ar rc ${NAME} ${OBJS}
+
+all:	${NAME}
 
 clean:
-	rm -f $(OBJS)
+	${RM} ${OBJS}
 
-fclean: clean
-	rm -f $(NAME)
+fclean:	clean
+	${RM} ${OBJS}
 
-re: fclean all
+re:	fclean all

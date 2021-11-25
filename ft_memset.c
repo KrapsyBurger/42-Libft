@@ -6,7 +6,7 @@
 /*   By: nfascia <nathanfascia@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 19:24:18 by nfascia           #+#    #+#             */
-/*   Updated: 2021/11/24 15:33:59 by nfascia          ###   ########.fr       */
+/*   Updated: 2021/11/25 19:42:48 by nfascia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	c = (unsigned char) c;
 	while (i < n)
 	{
-		a[i] = c;
+		a[i] = (char)c;
 		i++;
 	}
 	return (s);
