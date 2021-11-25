@@ -1,31 +1,37 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nfascia <nathanfascia@gmail.com>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/25 16:45:43 by nfascia           #+#    #+#             */
+/*   Updated: 2021/11/25 16:46:30 by nfascia          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
-#include <stdio.h>
+#include "libft.h"
 
-void	ft_test(int i)
+void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned int n;
-	char a;
+	unsigned int	i;
+	char			a;
 
-	if (i < 0)
+	if (n < 0)
 	{
-		write(1, "-", 1);
-		n = -i;
+		write(fd, "-", 1);
+		i = -n;
 	}
 	else
 	{
-		n = i;
+		i = n;
 	}
-	if (n > 9)
+	if (i > 9)
 	{
-		ft_test(n / 10);
-		n %= 10;
+		ft_putnbr_fd(i / 10, fd);
+		i %= 10;
 	}
-	a = n + '0';
-	write(1, &a, 1);
-}
-
-int main()
-{
-	ft_test(-2147483648);
-	return (0);
+	a = i + '0';
+	write(fd, &a, 1);
 }
