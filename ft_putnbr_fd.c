@@ -21,17 +21,17 @@ void	ft_putnbr_fd(int n, int fd)
 	if (n < 0)
 	{
 		write(fd, "-", 1);
-		i = -n;
+		i = (unsigned int)-n;
 	}
 	else
 	{
-		i = n;
+		i = (unsigned int)n;
 	}
 	if (i > 9)
 	{
 		ft_putnbr_fd(i / 10, fd);
 		i %= 10;
 	}
-	a = i + '0';
+	a = (char)i + '0';
 	write(fd, &a, 1);
 }
