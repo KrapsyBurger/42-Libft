@@ -25,7 +25,9 @@ ft_putchar_fd.c\
 ft_putendl_fd.c\
 ft_calloc.c\
 ft_strdup.c\
-ft_strjoin.c
+ft_strjoin.c\
+ft_substr.c\
+ft_striteri.c
 
  OBJS        = ${SRCS:.c=.o}
 
