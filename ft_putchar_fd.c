@@ -6,11 +6,10 @@
 /*   By: nfascia <nathanfascia@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 14:48:02 by nfascia           #+#    #+#             */
-/*   Updated: 2021/11/25 14:48:13 by nfascia          ###   ########.fr       */
+/*   Updated: 2021/11/29 10:45:51 by nfascia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)

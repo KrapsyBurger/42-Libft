@@ -6,7 +6,7 @@
 /*   By: nfascia <nathanfascia@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:45:30 by nfascia           #+#    #+#             */
-/*   Updated: 2021/11/24 17:45:43 by nfascia          ###   ########.fr       */
+/*   Updated: 2021/11/29 14:35:34 by nfascia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		{
 			return ((unsigned char)a[i] - (unsigned char)b[i]);
 		}
-			i++;
+		i++;
 	}
 	return (0);
 }
