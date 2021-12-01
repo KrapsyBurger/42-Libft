@@ -6,13 +6,13 @@
 /*   By: nfascia <nathanfascia@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 14:12:31 by nfascia           #+#    #+#             */
-/*   Updated: 2021/11/29 14:53:09 by nfascia          ###   ########.fr       */
+/*   Updated: 2021/12/01 20:32:17 by nfascia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	norminette_lol(unsigned long i, unsigned long n, char *a, const char *b)
+static void	norm(unsigned long i, unsigned long n, char *a, const char *b)
 {
 	while (i < n)
 	{
@@ -44,7 +44,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	else
 	{
-		norminette_lol(i, n, a, b);
+		norm(i, n, a, b);
 	}
 	return (dest);
 }

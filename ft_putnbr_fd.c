@@ -6,11 +6,10 @@
 /*   By: nfascia <nathanfascia@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 16:45:43 by nfascia           #+#    #+#             */
-/*   Updated: 2021/11/25 16:46:30 by nfascia          ###   ########.fr       */
+/*   Updated: 2021/12/01 20:27:46 by nfascia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)

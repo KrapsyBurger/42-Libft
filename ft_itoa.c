@@ -6,13 +6,13 @@
 /*   By: nfascia <nathanfascia@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 11:35:01 by nfascia           #+#    #+#             */
-/*   Updated: 2021/12/01 11:35:02 by nfascia          ###   ########.fr       */
+/*   Updated: 2021/12/01 20:26:48 by nfascia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned long	ft_ncheck(int n)
+static unsigned long	ft_ncheck(int n)
 {
 	unsigned long	i;
 
@@ -23,7 +23,7 @@ unsigned long	ft_ncheck(int n)
 	return (i);
 }
 
-char	*ft_resultalloc(char *result, int n, unsigned long b)
+static char	*ft_resultalloc(char *result, int n, unsigned long b)
 {
 	if (n < 0)
 		result = malloc(sizeof(char) * b + 2);
@@ -32,7 +32,7 @@ char	*ft_resultalloc(char *result, int n, unsigned long b)
 	return (result);
 }
 
-char	*ft_fill(char *r, unsigned long i, unsigned long a, unsigned long j)
+static char	*ft_fill(char *r, unsigned long i, unsigned long a, unsigned long j)
 {
 	while (i * a > i)
 	{
@@ -44,7 +44,7 @@ char	*ft_fill(char *r, unsigned long i, unsigned long a, unsigned long j)
 	return (r);
 }
 
-void	norminettelol(unsigned long *a, unsigned long *b, unsigned long *j)
+static void	norminettelol(unsigned long *a, unsigned long *b, unsigned long *j)
 {
 	*a = 1;
 	*b = 0;

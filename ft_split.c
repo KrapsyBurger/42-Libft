@@ -6,13 +6,13 @@
 /*   By: nfascia <nathanfascia@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 13:17:03 by nfascia           #+#    #+#             */
-/*   Updated: 2021/12/01 16:48:41 by nfascia          ###   ########.fr       */
+/*   Updated: 2021/12/01 20:28:14 by nfascia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned long	ft_wordlen(const char *s, char c, int i)
+static unsigned long	ft_wordlen(const char *s, char c, int i)
 {
 	unsigned long	wlen;
 
@@ -25,7 +25,7 @@ unsigned long	ft_wordlen(const char *s, char c, int i)
 	return (wlen + 1);
 }
 
-unsigned long	ft_wordcount(const char *s, char c)
+static unsigned long	ft_wordcount(const char *s, char c)
 {
 	unsigned long	i;
 	unsigned long	wcount;
@@ -51,7 +51,7 @@ unsigned long	ft_wordcount(const char *s, char c)
 	return (wcount);
 }
 
-char	**ft_free(char **tab, unsigned long len)
+static char	**ft_free(char **tab, unsigned long len)
 {
 	unsigned long	i;
 
@@ -65,7 +65,7 @@ char	**ft_free(char **tab, unsigned long len)
 	return (NULL);
 }
 
-char	**ft_norm(char **tab, unsigned long j)
+static char	**ft_norm(char **tab, unsigned long j)
 {
 	tab[j] = 0;
 	return (tab);

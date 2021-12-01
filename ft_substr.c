@@ -6,13 +6,13 @@
 /*   By: nfascia <nathanfascia@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/29 14:43:45 by nfascia           #+#    #+#             */
-/*   Updated: 2021/12/01 11:27:18 by nfascia          ###   ########.fr       */
+/*   Updated: 2021/12/01 20:31:15 by nfascia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_filla(char *a, char const *s, unsigned long len, unsigned int start)
+static char	*ft_filla(char *a, char const *s, unsigned long l, unsigned int b)
 {
 	unsigned long	i;
 	unsigned long	j;
@@ -21,7 +21,7 @@ char	*ft_filla(char *a, char const *s, unsigned long len, unsigned int start)
 	j = 0;
 	while (s[i] != '\0')
 	{
-		if (i >= start && j < len)
+		if (i >= b && j < l)
 		{
 			a[j] = s[i];
 			j++;

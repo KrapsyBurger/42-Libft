@@ -6,13 +6,13 @@
 /*   By: nfascia <nathanfascia@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 11:00:55 by nfascia           #+#    #+#             */
-/*   Updated: 2021/12/01 11:48:21 by nfascia          ###   ########.fr       */
+/*   Updated: 2021/12/01 20:29:15 by nfascia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_strcomp(const char *s1, const char *s2)
+static unsigned int	ft_strcomp(const char *s1, const char *s2)
 {
 	unsigned int	i;
 	unsigned long	j;
@@ -31,7 +31,7 @@ unsigned int	ft_strcomp(const char *s1, const char *s2)
 	return (i);
 }
 
-unsigned long	ft_strcomp2(const char *s1, const char *s2)
+static unsigned long	ft_strcomp2(const char *s1, const char *s2)
 {
 	unsigned long	j;
 	unsigned long	i;
@@ -50,7 +50,7 @@ unsigned long	ft_strcomp2(const char *s1, const char *s2)
 	return (i);
 }
 
-unsigned long	ft_firstcheck(const char *s1, const char *s2)
+static unsigned long	ft_firstcheck(const char *s1, const char *s2)
 {
 	unsigned long	i;
 	unsigned long	j;
