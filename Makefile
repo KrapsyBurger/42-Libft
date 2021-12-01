@@ -30,9 +30,14 @@ ft_substr.c\
 ft_striteri.c\
 ft_strtrim.c\
 ft_strmapi.c\
-ft_itoa.c
+ft_itoa.c\
+ft_split.c
+
+SRCSBONUS = mesfichiersbonus
 
  OBJS        = ${SRCS:.c=.o}
+ 
+ OBJSBONUS	= ${SRCSBONUS:.c=.o}
 
 HEADER        = .
 
@@ -54,9 +59,12 @@ ${NAME}:	${OBJS}
 all:	${NAME}
 
 clean:
-	${RM} ${OBJS}
+	${RM} ${OBJS} ${OBJSBONUS}
 
 fclean:	clean
-	${RM} ${OBJS}
+	${RM} ${OBJS} ${OBJSBONUS}
 
 re:	fclean all
+
+bonus: ${OBJS} ${OBJSBONUS}
+	ar rc ${NAME} ${OBJS} ${OBJSBONUS}

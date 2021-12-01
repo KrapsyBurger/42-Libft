@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nfascia <nathanfascia@gmail.com>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/01 11:00:55 by nfascia           #+#    #+#             */
+/*   Updated: 2021/12/01 11:48:21 by nfascia          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 unsigned int	ft_strcomp(const char *s1, const char *s2)
@@ -69,9 +81,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	unsigned long	m;
 
 	j = 0;
+	if (s1 == NULL)
+	{
+		return (ft_strdup(""));
+	}
 	if (ft_firstcheck(s1, set) == 1)
 	{
-		return(ft_strdup(""));
+		return (ft_strdup(""));
 	}
 	i = ft_strcomp(s1, set);
 	m = ft_strcomp2(s1, set);
@@ -79,6 +95,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	result = ft_substr(s1, i, m - i + 1);
 	if (!result)
-		return(result);
+		return (result);
 	return (result);
 }

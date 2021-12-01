@@ -6,7 +6,7 @@
 /*   By: nfascia <nathanfascia@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 22:15:04 by nfascia           #+#    #+#             */
-/*   Updated: 2021/11/29 14:42:09 by nfascia          ###   ########.fr       */
+/*   Updated: 2021/12/01 11:47:09 by nfascia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	unsigned long	i;
 	unsigned long	j;
 
+	if (s1 == NULL || s2 == NULL)
+		return (ft_strdup(""));
 	a = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	i = 0;
 	j = 0;
 	if (a == NULL)
-	{
 		return (a);
-	}
 	while (s1[i] != '\0')
 	{
 		a[i] = s1[i];

@@ -1,173 +1,99 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nfascia <nathanfascia@gmail.com>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/01 13:17:03 by nfascia           #+#    #+#             */
+/*   Updated: 2021/12/01 15:05:43 by nfascia          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-#include <stdio.h>
 
-/*size_t	ft_strlen(const char *s)
+unsigned long	ft_wordlen(const char *s, char c, int i)
 {
-	unsigned long	i;
+	unsigned long	wlen;
 
-	i = 0;
-	while (s[i] != '\0')
+	wlen = 0;
+	while (s[i] != '\0' && s[i] != c)
 	{
 		i++;
+		wlen++;
 	}
-	return (i);
+	return (wlen + 1);
 }
 
-char	*ft_strdup(const char *s)
+unsigned long	ft_wordcount(const char *s, char c)
 {
-	char	*a;
-	int		i;
-
-	a = malloc(ft_strlen(s) + 1);
-	i = 0;
-	if (a == NULL)
-	{
-		return (a);
-	}
-	while (s[i] != '\0')
-	{
-		a[i] = s[i];
-		i++;
-	}
-	a[i] = '\0';
-	return (a);
-}
-
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	char			*a;
 	unsigned long	i;
-	unsigned long	j;
+	unsigned long	wcount;
 
 	i = 0;
-	j = 0;
-	a = NULL;
+	wcount = 0;
 	if (s == NULL)
-	{
-		return (NULL);
-	}
-	if (start > ft_strlen(s))
-	{
-		return (ft_strdup(""));
-	}
-	if (ft_strlen(s + start) < len)
-	{
-		len = ft_strlen(s + start);
-	}
-	a = malloc(sizeof(char) * len + 1);
-	if (a == NULL)
-		return (a);
+		return (0);
 	while (s[i] != '\0')
 	{
-		if (i >= start && j < len)
+		if (s[i] != c)
 		{
-			a[j] = s[i];
-			j++;
+			wcount++;
+			while (s[i] != c)
+			{
+				i++;
+				if (s[i] == '\0')
+					return (wcount);
+			}
 		}
 		i++;
 	}
-	a[j] = '\0';
-	return (a);
-}*/
-
-unsigned long   ft_wordlen(const char *s, char c, unsigned int i)
-{
-    unsigned long   wlen;
-
-    wlen = 0;
-    while (s[i] != '\0' && s[i] != c)
-    {
-        i++;
-        wlen++;
-    }
-    return (wlen + 1);
+	return (wcount);
 }
 
-unsigned long   ft_wordcount(const char *s, char c)
+char	**ft_free(char **tab, unsigned long len)
 {
-    unsigned long   i;
-    unsigned long   wcount;
+	unsigned long	i;
 
-    i = 0;
-    wcount = 0;
-    while (s[i] != '\0')
-    {
-        if (s[i] != c)
-        {
-            wcount++;
-            while (s[i] != c)
-            {
-                i++;
-                if (s[i] == '\0')
-                {
-                    return (wcount);
-                }
-            }
-        }
-        i++;
-    }
-    return (wcount);
+	i = 0;
+	while (i < len)
+	{
+		free(tab[i]);
+		i++;
+	}
+	free(tab);
+	return (NULL);
 }
 
-void    ft_free(char **tab, unsigned long len)
+char	**ft_norm(char **tab, unsigned long j)
 {
-    unsigned long   i;
-
-    i = 0;
-    while (i < len)
-    {
-        free(tab[i]);
-        i++;
-    }
+	tab[j] = 0;
+	return (tab);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-    char        **tab;
-    unsigned int    i;
-    unsigned long   j;
+	char			**tab;
+	int				i;
+	unsigned long	j;
 
-    i = 0;
-    j = 0;
-    if (s == NULL || !(tab = malloc(sizeof(char *) * ft_wordcount(s, c) + 1)))
-    {
-        return (NULL);
-    }
-    while (i <= ft_strlen(s))
-    {
-        if (s[i] != c)
-        {
-            tab[j] = ft_substr(s, i, ft_wordlen(s, c, i) - 1)
-            j++;
-            while (s[i] != c)
-            {
-                i++;
-                if (s[i] == '\0')
-                {
-                    tab[j] = 0;
-                    return (tab);
-                }
-            }
-        }
-        i++;
-    }
-    tab[j] = 0;
-    return (tab);
+	i = -1;
+	j = 0;
+	tab = malloc(sizeof(char *) * (ft_wordcount(s, c) + 1));
+	if (tab == NULL || s == NULL)
+		return (NULL);
+	while (s[++i])
+	{
+		if (s[i] != c)
+		{
+			tab[j] = ft_substr(s, (unsigned int)i, ft_wordlen(s, c, i) - 1);
+			if (tab[j] == NULL)
+				return (ft_free(tab, j));
+			j++;
+			while (s[i] != c)
+				if (s[++i] == '\0')
+					return (ft_norm(tab, j));
+		}
+	}
+	return (ft_norm(tab, j));
 }
-
-
-
-
-/*int main()
-{
-    char a[] = "spl it";
-    char **b = ft_split(a, 's');
-    int j = 0;
-    printf("%lu\n", ft_wordcount(a, 's'));
-    while (j < 7)
-    {
-        printf("%s\n", b[j]);
-        j++;
-    }
-    return (0);
-}*/

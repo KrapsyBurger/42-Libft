@@ -6,7 +6,7 @@
 /*   By: nfascia <nathanfascia@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 15:02:58 by nfascia           #+#    #+#             */
-/*   Updated: 2021/11/29 10:58:06 by nfascia          ###   ########.fr       */
+/*   Updated: 2021/12/01 11:52:33 by nfascia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ void	ft_putstr_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
+	if (s == NULL)
+	{
+		return ;
+	}
 	while (s[i] != '\0')
 	{
 		write(fd, s + i, 1);
