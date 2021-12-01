@@ -41,7 +41,6 @@ void    norminettelol(unsigned long *a, unsigned long *b, unsigned long *j)
 
 char    *ft_itoa(int n)
 {
-    unsigned long    i;
     unsigned long    a;
     unsigned long    b;
     char             *result;
@@ -51,8 +50,7 @@ char    *ft_itoa(int n)
     norminettelol(&a, &b, &j);
     if (n <= -2147483648)
         return (ft_strdup("-2147483648"));
-    i = ft_ncheck(n);
-    while (i / a > 0)
+    while (ft_ncheck(n) / a > 0)
     {
         a *= 10;
         b++;
@@ -67,6 +65,6 @@ char    *ft_itoa(int n)
         j = 1;
         result[0] = '-';
     }
-    return (ft_fill(result, i, a, j));
+    return (ft_fill(result, ft_ncheck(n), a, j));
 }
 
