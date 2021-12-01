@@ -38,7 +38,7 @@ HEADER        = .
 
 CC        = gcc
 
-CFLAGS        = -Werror -Wall -Wextra 
+CFLAGS        = -Werror -Wall -Wextra -Wconversion
 
 RM        = rm -f
 
