@@ -33,13 +33,15 @@ ft_strmapi.c\
 ft_itoa.c\
 ft_split.c
 
-SRCSBONUS = mesfichiersbonus
+SRCSBONUS = ft_lstnew.c\
+ft_lstadd_front.c\
+ft_lstsize.c\
+ft_lstlast.c\
+ft_lstadd_back.c
 
  OBJS        = ${SRCS:.c=.o}
  
- OBJSBONUS	= ${SRCSBONUS:.c=.o}
-
-HEADER        = .
+ OBJSBONUS	 = ${SRCSBONUS:.c=.o}
 
 CC        = gcc
 
@@ -50,7 +52,7 @@ RM        = rm -f
 NAME        = libft.a
 
 .c.o:
-	${CC} ${CFLAGS} -I${HEADER} -c $< -o ${<:.c=.o}
+	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 
 ${NAME}:	${OBJS}
@@ -66,5 +68,5 @@ fclean:	clean
 
 re:	fclean all
 
-bonus: ${OBJS} ${OBJSBONUS}
-	ar rc ${NAME} ${OBJS} ${OBJSBONUS}
+bonus: 	${OBJSBONUS}
+	ar rc ${NAME} ${OBJSBONUS}
