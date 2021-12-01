@@ -28,7 +28,9 @@ ft_strdup.c\
 ft_strjoin.c\
 ft_substr.c\
 ft_striteri.c\
-ft_strtrim.c
+ft_strtrim.c\
+ft_strmapi.c\
+ft_itoa.c
 
  OBJS        = ${SRCS:.c=.o}
 
@@ -36,7 +38,7 @@ HEADER        = .
 
 CC        = gcc
 
-CFLAGS        = -Werror -Wall -Wextra -Wconversion
+CFLAGS        = -Werror -Wall -Wextra 
 
 RM        = rm -f
 
