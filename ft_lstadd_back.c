@@ -6,7 +6,7 @@
 /*   By: nfascia <nathanfascia@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 20:25:51 by nfascia           #+#    #+#             */
-/*   Updated: 2021/12/01 20:31:35 by nfascia          ###   ########.fr       */
+/*   Updated: 2021/12/02 17:02:42 by nfascia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,17 @@
 
 void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	int	i;
+	t_list	*tmp;
 
-	i = 0;
-	while (i < ft_lstsize(new) - 1)
+	tmp = *alst;
+	if (!new)
+		return ;
+	if (*alst)
+		tmp = ft_lstlast(tmp);
+	else
 	{
-		new = (*alst)->next;
-		i++;
+		(*alst) = new;
+		return ;
 	}
+	tmp->next = new;
 }
